@@ -10,13 +10,15 @@ public class Caracteristicas {
 	
 	public static final int RET_CARACTERISTICA_CABELO = 1;
 	public static final int RET_CARACTERISTICA_COLAR = 2;
-	public static final String ARCHIVE_ARFF_NAME = "caracteristicas.arff";
+	public static final int RET_CARACTERISTICA_ROUPA = 3;
+	public static final String ARCHIVE_ARFF_NAME = "src/caracteristicas.arff";
 	
 	private double cabeloBob;
 	private double cabeloSelma;
 	private double colarBob;
 	private double colarSelma;
-	
+	private double roupaBob;
+	private double roupaSelma;
 	
 	private double personagem;
 	private String personagemName;
@@ -28,6 +30,10 @@ public class Caracteristicas {
 	public void reset() {
 		this.cabeloBob = 0;
 		this.cabeloSelma = 0;
+		this.colarBob = 0;
+		this.colarSelma = 0;
+		this.roupaBob = 0;
+		this.roupaSelma = 0;
 		this.personagem = 0;
 		this.personagemName = "";
 	}
@@ -42,6 +48,8 @@ public class Caracteristicas {
 		this.cabeloSelma = (this.cabeloSelma / porcentagem) * 100;
 		this.colarBob 	 = (this.colarBob 	 / porcentagem) * 100;
 		this.colarSelma	 = (this.colarSelma  / porcentagem) * 100;
+		this.roupaBob 	 = (this.roupaBob	 / porcentagem) * 100;
+		this.roupaSelma	 = (this.roupaSelma  / porcentagem) * 100;
 		
 	}
 	
@@ -80,6 +88,10 @@ public class Caracteristicas {
 			case RET_CARACTERISTICA_COLAR:
 				colarBob++;
 				break;
+				
+			case RET_CARACTERISTICA_ROUPA:
+				roupaBob++;
+				break;
 
 		}
 		
@@ -95,6 +107,10 @@ public class Caracteristicas {
 				
 			case RET_CARACTERISTICA_COLAR:
 				colarSelma++;
+				break;
+				
+			case RET_CARACTERISTICA_ROUPA:
+				roupaSelma++;
 				break;
 
 		}
@@ -170,6 +186,22 @@ public class Caracteristicas {
 
 	public void setColarSelma(double colarSelma) {
 		this.colarSelma = colarSelma;
+	}
+
+	public double getRoupaBob() {
+		return roupaBob;
+	}
+
+	public void setRoupaBob(double roupaBob) {
+		this.roupaBob = roupaBob;
+	}
+
+	public double getRoupaSelma() {
+		return roupaSelma;
+	}
+
+	public void setRoupaSelma(double roupaSelma) {
+		this.roupaSelma = roupaSelma;
 	}
 	
 }

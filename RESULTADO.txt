@@ -1,0 +1,14 @@
+CABELO
+   a   b   <-- classified as
+ 753  21 |   a = Bob
+  70 105 |   b = Selma
+
+CABELO | COLAR
+   a   b   <-- classified as
+ 752  22 |   a = Bob
+  68 107 |   b = Selma
+
+CABELO | COLAR | ROUPA ( APENAS SELMA )
+   a   b   <-- classified as
+ 754  20 |   a = Bob
+  18  85 |   b = Selma

@@ -27,6 +27,8 @@ public class WekaManager {
 			exportacao += "@attribute cabelo_selma real\n";
 			exportacao += "@attribute colar_bob real\n";
 			exportacao += "@attribute colar_selma real\n";
+			exportacao += "@attribute roupa_bob real\n";
+			exportacao += "@attribute roupa_selma real\n";
 			exportacao += "@attribute classe {Bob, Selma}\n\n";
 			exportacao += "@data\n";
 	    
@@ -41,12 +43,16 @@ public class WekaManager {
 	    	System.out.println(" \t Selma Cabelo: "+caracteristica.get(len).getCabeloSelma());
 	    	System.out.println(" \t Bob Colar: "+caracteristica.get(len).getColarBob());
 	    	System.out.println(" \t Selma Colar: "+caracteristica.get(len).getColarSelma());
+	    	System.out.println(" \t Bob Roupa: "+caracteristica.get(len).getRoupaBob());
+	    	System.out.println(" \t Selma Roupa: "+caracteristica.get(len).getRoupaSelma());
 	    	System.out.println();
 	    	
         	exportacao += caracteristica.get(len).getCabeloBob() + "," 
                     + caracteristica.get(len).getCabeloSelma() + "," 
             		+ caracteristica.get(len).getColarBob() + ","
             		+ caracteristica.get(len).getColarSelma() + ","
+            		+ caracteristica.get(len).getRoupaBob() + ","
+            		+ caracteristica.get(len).getRoupaSelma() + ","
                     + caracteristica.get(len).getPersonagemName() + "\n";
 	    	
 	    }
@@ -80,6 +86,10 @@ public class WekaManager {
 			novo.setDataset(instancias);
 			novo.setValue(0, carac.getCabeloBob());
 			novo.setValue(1, carac.getCabeloSelma());
+			novo.setValue(2, carac.getColarBob());
+			novo.setValue(3, carac.getColarSelma());
+			novo.setValue(4, carac.getRoupaBob());
+			novo.setValue(5, carac.getRoupaSelma());
 			
 			retorno = nb.distributionForInstance(novo);
 			

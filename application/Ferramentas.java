@@ -53,6 +53,12 @@ public class Ferramentas {
 					carac.getImagemProcessada().put(i, j, aplicaModificacao(ret,carac, Caracteristicas.RET_CARACTERISTICA_COLAR));
 				}
 				
+				// Testando Roupa
+				ret = verificaRoupa(r,g,b);
+				if(ret != Caracteristicas.RET_FAIL) {
+					carac.getImagemProcessada().put(i, j, aplicaModificacao(ret,carac, Caracteristicas.RET_CARACTERISTICA_ROUPA));
+				}
+				
 			}
 		}
 		
@@ -126,4 +132,18 @@ public class Ferramentas {
 			
 		return Caracteristicas.RET_FAIL;
 	}
+	
+	private static int verificaRoupa(double r, double g, double b) {
+		
+//		if( (r <= 230 && g <= 225 && b <= 195) && (r >= 200 && g >= 180 && b >= 130)){
+//			return Caracteristicas.RET_BOB;
+//		}
+
+		if( (r <= 100 && g <= 140 && b <= 251) && (r >= 40 && g >= 110 && b >= 146)) {
+			return Caracteristicas.RET_SELMA;
+		}
+			
+		return Caracteristicas.RET_FAIL;
+	}
+	
 }
